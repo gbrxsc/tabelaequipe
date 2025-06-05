@@ -362,11 +362,15 @@ export default function TeamDashboard() {
   }
 
   const handleClearData = () => {
-    if (confirm("Tem certeza que deseja limpar todos os dados? Esta ação não pode ser desfeita.")) {
-      clearSharedData()
+  if (confirm("Tem certeza que deseja limpar todos os dados? Esta ação não pode ser desfeita.")) {
+    clearSharedData()
+
+    if (typeof window !== "undefined") {
       window.location.reload()
     }
   }
+}
+
 
   const handleForceSync = () => {
     // Força sincronização manual
